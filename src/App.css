@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.testBody {
+    padding-top: 4em;
+    display : flex;
+    height: 1500px;
+    width: 100%;
+    justify-content: center;
+}
+
+.itIsMe {
+    width: 1000px;
+    height: 350px;
+}
+
+.itIsMeM {
+    width: 500px;
+    height: 200px;
+}
+
+@font-face {
+    font-family: 'nexonGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

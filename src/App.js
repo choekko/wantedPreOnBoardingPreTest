@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
+import { useMediaQuery } from 'react-responsive';
+import Navigation from './components/Navigation';
+import ShadowBody from './components/ShadowBody';
+import SearchWindow from './components/SearchWindow';
+import OnBoardingWindow from './components/OnBoardingWindow';
+import MobileMenuList from './components/MobileMenuList';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const isMobileSize = useMediaQuery({maxWidth: '1150px'})
+    const [isSearchClicked, setIsSearchClicked] = useState(false);
+    const [isOnBoarding, setIsOnBoarding] = useState(false);
+    const [isMobileMenuBtnClicked, setIsMobileListBtnClicked] = useState(false);
+
+    return (
+        <>
+            <Navigation
+            isMobileSize={isMobileSize}
+            setIsSearchClicked={setIsSearchClicked}
+            setIsOnBoarding={setIsOnBoarding}
+            setIsMobileListBtnClicked={setIsMobileListBtnClicked}/>
+            <article className='testBody'>
+                <img
+                className={isMobileSize ? 'itIsMeM' : 'itIsMe'}
+                style={{marginTop: '6em'}} src='/itIsMe.png'/>
+            </article>
+            {isSearchClicked ?
+                <SearchWindow 
+                isMobileSize={isMobileSize} 
+                setIsSearchClicked={setIsSearchClicked}/>
+                :
+                null
+            }
+            {isOnBoarding ? 
+                <OnBoardingWindow
+                setIsOnBoarding={setIsOnBoarding}
+                isMobileSize={isMobileSize}/>
+                :
+                null
+            }
+            {isMobileMenuBtnClicked ?
+                <MobileMenuList setIsMobileListBtnClicked={setIsMobileListBtnClicked}/>
+                :
+                null
+            }
+        </>
+    )
 }
 
-export default App;
+export default App
