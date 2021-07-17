@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import ExploreBackground from './ExploreBackground'
 import ExploreList from './ExploreList'
 import './style.css'
@@ -43,30 +42,31 @@ const ExploreDetails = (props) => {
         onMouseLeave={()=>setExploreHover(false)}
         >
             <table className='exploreDetails'>
-                {categories.map((e, i) => {
-                    return (
-                        <>
-                        <td>
-                            <ExploreList mainCategory={e.main} subCategories={e.sub} />
-                        </td>
-                        </>
-                    )
-                })}
-                <td>
-                    <ul className='exploreList'>
-                        {remains.map((e, i) => {
+                <tbody>
+                    <tr>
+                        {categories.map((e) => {
                             return (
-                            <li className='exploreMainCategory'>
-                                <span>{e}</span>
-                                <div className='arrowIcon'>
-                                    <ArrowForwardIcon style={{fontSize: '10px'}} />
-                                </div>
-                            </li>
+                                <td key={e.main}>
+                                    <ExploreList mainCategory={e.main} subCategories={e.sub} />
+                                </td>
                             )
                         })}
-                    
-                    </ul>
-                </td>
+                        <td>
+                            <ul className='exploreList'>
+                                {remains.map((e) => {
+                                    return (
+                                    <li key={e} className='exploreMainCategory'>
+                                        <span>{e}</span>
+                                        <div className='arrowIcon'>
+                                            <ArrowForwardIcon style={{fontSize: '10px'}} />
+                                        </div>
+                                    </li>
+                                    )
+                                })}
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         </>

@@ -1,4 +1,3 @@
-import { List } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const ListButton = (props) => {

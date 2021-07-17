@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { useMediaQuery } from 'react-responsive';
 import Navigation from './components/Navigation';
-import ShadowBody from './components/ShadowBody';
 import SearchWindow from './components/SearchWindow';
 import OnBoardingWindow from './components/OnBoardingWindow';
 import MobileMenuList from './components/MobileMenuList';
@@ -21,7 +20,7 @@ const App = () => {
             setIsOnBoarding={setIsOnBoarding}
             setIsMobileListBtnClicked={setIsMobileListBtnClicked}/>
             <article className='testBody'>
-                <img
+                <img alt='자기소개'
                 className={isMobileSize ? 'itIsMeM' : 'itIsMe'}
                 style={{marginTop: '6em'}} src='/itIsMe.png'/>
             </article>

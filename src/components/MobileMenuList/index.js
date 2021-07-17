@@ -9,7 +9,7 @@ const MobileMenuList = (props) => {
                     '직군별 연봉', '커리어 성장', '/', '기업 서비스'];
 
     const handleOutClick = (e) => {
-        if (e.target != e.currentTarget)
+        if (e.target !== e.currentTarget)
             return ;
         setIsMobileListBtnClicked(false);
     }
@@ -34,9 +34,9 @@ const MobileMenuList = (props) => {
                 <section>
                     {items.map((e, i) => {
                         if (e === '/') 
-                            return <div className='divider'/>
+                            return <div key={e + i.toString()} className='divider'/>
                         else
-                            return <p style={{cursor: 'pointer'}}>{e}</p>
+                            return <p key={e} style={{cursor: 'pointer'}}>{e}</p>
                     })}
                 </section>
             </div>

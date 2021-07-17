@@ -11,9 +11,9 @@ const ExploreList = (props) => {
                     <ArrowForwardIcon style={{fontSize: '10px'}} />
                 </div>
             </li>
-            {subCategories.map((e, i) => {
+            {subCategories.map((e) => {
                 return (
-                <li className='exploreSubCategories'>
+                <li key={e} className='exploreSubCategories'>
                     <span>{e}</span>
                 </li>
                 )

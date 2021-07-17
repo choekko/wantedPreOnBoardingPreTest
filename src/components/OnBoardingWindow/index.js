@@ -24,7 +24,7 @@ const OnBoardingWindow = (props) => {
         {transform: 'translate(10em, -20.3em)'}
 
     const handleOutClick = (e) => {
-        if (e.currentTarget != e.target)
+        if (e.currentTarget !== e.target)
             return;
         setIsOnBoarding(false);
     }
@@ -65,9 +65,10 @@ const OnBoardingWindow = (props) => {
                     logoUrl={methodDefault.logoUrl}
                     isDefault={true}/> 
                     or
-                    {onBoardingMethod.map((e, i) => {
+                    {onBoardingMethod.map((e) => {
                         return (
                         <OnBoardingDetail
+                        key={e.name}
                         name={e.name}
                         logoUrl={e.logoUrl}
                         isDefault={false}/>

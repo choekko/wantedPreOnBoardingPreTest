@@ -15,9 +15,13 @@ const BtnBundleWeb = (props) => {
                 <SearchButton setIsSearchClicked={setIsSearchClicked}/>
                 <OnBoardingButton setIsOnBoarding={setIsOnBoarding}/>
                 <table className='space'>
-                    <td 
-                    style={{borderRight: 'solid 1px black'}}/>  
-                    <td/>
+                    <tbody>
+                        <tr>
+                            <td 
+                            style={{borderRight: 'solid 1px black'}}/>  
+                            <td/>
+                        </tr>
+                    </tbody>
                 </table>
                 <CorpService/>
             </div>

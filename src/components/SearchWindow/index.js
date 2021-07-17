@@ -10,7 +10,7 @@ const SearchWindow = (props) => {
 
 
     const handleOutClick = (e) => {
-        if (e.target != e.currentTarget)
+        if (e.target !== e.currentTarget)
             return;
         setIsSearchClicked(false);
     }
@@ -43,7 +43,7 @@ const SearchWindow = (props) => {
                 style={{marginTop: '15px'}}
                 onClick={handleOutClick}>
                     {recommendTags.map((e, i) => {
-                        return <RecommendTag isMobileSize={isMobileSize} tagName={e} keyForColor={i}/>
+                        return <RecommendTag key={e} isMobileSize={isMobileSize} tagName={e} keyForColor={i}/>
                     })}
                 </div>
             </div>

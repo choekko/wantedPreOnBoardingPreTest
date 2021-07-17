@@ -35,9 +35,10 @@
     width: 94%;
 }
 
-.exploreDetails > td {
+.exploreDetails td {
     flex: none;
     width: 45px;
+    vertical-align: top;
 }
 
 .exploreList {
